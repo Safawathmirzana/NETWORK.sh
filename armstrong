@@ -1,0 +1,17 @@
+echo "Enter a number :"
+read num
+o=$num
+len=${#num}
+sum=0
+while [ $num -gt 0 ]
+do
+ digit=$(( $num % 10 ))
+ num=$(( $num / 10 ))
+ sum=$(( $sum + $digit**$len ))
+done
+if [ $o -eq $sum ]
+then
+ echo "$o is armstrong number "
+else
+ echo "$o is not armstrong number "
+fi
